@@ -1,0 +1,17 @@
+type Query {
+    discoverCluster: [App]
+    appByName(name: String!): App
+}
+
+type Mutation {
+    connect(accessKey: String, secretKey:String, clusterName:String, region:String): String
+}
+
+type App {
+    name: String!
+    deployments: [String]
+    pods: [String]
+    configMaps: [String]
+    secrets: [String]
+    ingresses: [String]
+}
